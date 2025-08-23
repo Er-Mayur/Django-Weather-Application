@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e
-python3 -m pip install -r requirements.txt
+# Do NOT install here; Vercel already installed from requirements.txt
 python3 manage.py collectstatic --noinput
