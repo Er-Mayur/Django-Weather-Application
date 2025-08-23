@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -118,9 +119,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_DIRS = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [STATIC_DIRS]
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]      # where css/images live in your repo
+STATIC_ROOT = BASE_DIR / "staticfiles"        # collectstatic output (created at build)
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
