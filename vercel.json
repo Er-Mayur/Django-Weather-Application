@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "bash build.sh",
+  "buildCommand": "python3 manage.py collectstatic --noinput",
   "outputDirectory": ".",
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/wsgi.py" }
