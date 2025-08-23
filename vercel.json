@@ -2,11 +2,6 @@
   "framework": null,
   "buildCommand": "bash build.sh",
   "outputDirectory": ".",
-  "functions": {
-    "api/wsgi.py": {
-      "runtime": "python3.11"
-    }
-  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/wsgi.py" }
   ]
