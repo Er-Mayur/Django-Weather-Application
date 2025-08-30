@@ -12,16 +12,16 @@
 
 <body class="bg-[url('images/bg_image.jpg')] bg-cover bg-no-repeat min-h-screen p-5 flex flex-col items-center gap-5">
     <div class="flex items-center gap-3">
-        <div class="text-2xl text-white font-bold">Weather App</div>
+        <div class="md:text-2xl text-xl text-white font-bold">Weather App</div>
         <img src="{% static '/images/116.png' %}" alt="logo">
     </div>
 
-    <form action="" class="flex items-center justify-center gap-3 w-sm hover:scale-105 delay-300 ">
+    <form action="" class="flex items-center justify-center gap-3 md:w-sm w-70 hover:scale-105 delay-300 ">
         <input type="text" name="city" placeholder="Enter City name" class="bg-white/20 px-5 py-2 rounded-2xl placeholder-white/60 focus:outline-white text-white font-bold">
         <button><i class='bxr bx-search text-2xl text-white bg-white/20 p-4 rounded-full'></i></button>
     </form>
 
-    <div class="flex items-center w-sm p-5 justify-between bg-white/20 rounded-2xl">
+    <div class="flex items-center md:w-sm w-70 p-5 justify-between bg-white/20 rounded-2xl">
         <div class="flex flex-col text-white">
             <p class="font-bold text-2xl">{{temprature}}&deg;c</p>
             <p class="font-semibold text-sm">Now</p>
@@ -29,7 +29,7 @@
         </div>
         <img src="{% static 'images/113.png' %}" alt="sun" class="h-25">
     </div>
-    <div class="flex text-white bg-[#45aabc] rounded-2xl gap-7 p-3 w-sm justify-between">
+    <div class="flex text-white bg-[#45aabc] rounded-2xl gap-7 p-3 md:w-sm w-70 justify-between">
        <div class="flex flex-col justify-between">
             <img src="{{icon_url}}" alt="cloud">
             <div class="flex flex-col">
