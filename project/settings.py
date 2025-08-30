@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".vercel.app"]  # required for Vercel
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -120,7 +122,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # Important: define STATIC_ROOT
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_DIRS = [os.path.join(BASE_DIR, 'app/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
